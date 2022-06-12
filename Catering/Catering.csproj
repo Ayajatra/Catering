@@ -115,6 +115,7 @@
   <ItemGroup>
     <Content Include="Default.aspx" />
     <Content Include="Views\AddFood.aspx" />
+    <Content Include="Views\ChangePassword.aspx" />
     <Content Include="Views\EditFood.aspx" />
     <Content Include="Views\Home.aspx" />
     <Content Include="favicon.ico" />
@@ -144,7 +145,11 @@
       <LastGenOutput>CateringModel.cs</LastGenOutput>
     </Content>
     <Content Include="Views\ManageFoods.aspx" />
+    <Content Include="Views\ManageOrderDetails.aspx" />
+    <Content Include="Views\ManageOrders.aspx" />
     <Content Include="Views\ManageUsers.aspx" />
+    <Content Include="Views\NewOrder.aspx" />
+    <Content Include="Views\OrderFood.aspx" />
     <Content Include="Views\Register.aspx" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -175,6 +180,7 @@
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Views\ViewProfile.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
   </ItemGroup>
@@ -184,6 +190,9 @@
     <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\FoodCategoryController.cs" />
     <Compile Include="Controllers\FoodController.cs" />
+    <Compile Include="Controllers\OrderController.cs" />
+    <Compile Include="Controllers\OrderStatusController.cs" />
+    <Compile Include="Controllers\PaymentStatusController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -194,14 +203,27 @@
     </Compile>
     <Compile Include="Handlers\FoodCategoryHandler.cs" />
     <Compile Include="Handlers\FoodHandler.cs" />
+    <Compile Include="Handlers\OrderHandler.cs" />
+    <Compile Include="Handlers\OrderStatusHandler.cs" />
+    <Compile Include="Handlers\PaymentStatusHandler.cs" />
     <Compile Include="Repositories\FoodCategoryRepository.cs" />
     <Compile Include="Repositories\FoodRepository.cs" />
+    <Compile Include="Repositories\OrderRepository.cs" />
+    <Compile Include="Repositories\OrderStatusRepository.cs" />
+    <Compile Include="Repositories\PaymentStatusRepository.cs" />
     <Compile Include="Views\AddFood.aspx.cs">
       <DependentUpon>AddFood.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\AddFood.aspx.designer.cs">
       <DependentUpon>AddFood.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\EditFood.aspx.cs">
       <DependentUpon>EditFood.aspx</DependentUpon>
@@ -282,12 +304,40 @@
     <Compile Include="Views\ManageFoods.aspx.designer.cs">
       <DependentUpon>ManageFoods.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\ManageOrderDetails.aspx.cs">
+      <DependentUpon>ManageOrderDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ManageOrderDetails.aspx.designer.cs">
+      <DependentUpon>ManageOrderDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ManageOrders.aspx.cs">
+      <DependentUpon>ManageOrders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ManageOrders.aspx.designer.cs">
+      <DependentUpon>ManageOrders.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\ManageUsers.aspx.cs">
       <DependentUpon>ManageUsers.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\ManageUsers.aspx.designer.cs">
       <DependentUpon>ManageUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NewOrder.aspx.cs">
+      <DependentUpon>NewOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\NewOrder.aspx.designer.cs">
+      <DependentUpon>NewOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OrderFood.aspx.cs">
+      <DependentUpon>OrderFood.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\OrderFood.aspx.designer.cs">
+      <DependentUpon>OrderFood.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
@@ -311,6 +361,13 @@
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ViewProfile.aspx.cs">
+      <DependentUpon>ViewProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ViewProfile.aspx.designer.cs">
+      <DependentUpon>ViewProfile.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

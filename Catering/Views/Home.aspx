@@ -5,12 +5,6 @@
     <div class="text-center">
         <h1 class="text-5xl text-bold mb-2">Welcome!</h1>
         <p>Catering is an application which allows you to order foods.</p>
-        <p>
-            <%
-                Catering.Models.User user = (Catering.Models.User)Session["User"];
-                Response.Write(user?.Username ?? "Guest");
-            %>
-        </p>
     </div>
 
 </asp:Content>

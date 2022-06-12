@@ -37,5 +37,26 @@ namespace Catering.Controllers
             UserHandler.Register(username, password);
             return null;
         }
+
+        public static string ChangePassword(User user, string oldPassword, string newPassword, string repeatPassword)
+        {
+            if (string.IsNullOrWhiteSpace(oldPassword))
+                return "Old password can't be empty";
+
+            if (string.IsNullOrWhiteSpace(newPassword))
+                return "New password can't be empty";
+
+            if (string.IsNullOrWhiteSpace(repeatPassword))
+                return "Repeat password can't be empty";
+
+            if (user.UserPassword != oldPassword)
+                return "Old password is wrong";
+
+            if (newPassword != repeatPassword)
+                return "New password must match repeat password";
+
+
+            return UserHandler.UpdatePassword(user.UserId, newPassword);
+        }
     }
 }

@@ -65,7 +65,6 @@
                 {
             %>
             <a runat="server" href="~/Views/OrderFood" class="px-3">Order Food</a>
-            <a runat="server" href="~/Views/NotifyPayment" class="px-3">Notify Payment</a>
             <a runat="server" href="~/Views/ViewProfile" class="px-3">View Profile</a>
             <%
                 }
@@ -76,11 +75,11 @@
                 }
             %>
         </div>
-        <div class="py-5 px-4">
+        <div class="py-5 px-4" style="margin-bottom: 35px;">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
         </div>
-        <footer class="fixed bottom-0 w-full p-2 text-center bg-indigo-700 text-white">
+        <footer class="fixed bottom-0 w-full bg-indigo-700 text-white flex justify-center items-center" style="height: 35px;">
             <p>&copy; <%= DateTime.Now.Year %> - Catering Application</p>
         </footer>
     </form>

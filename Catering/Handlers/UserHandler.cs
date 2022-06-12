@@ -44,5 +44,21 @@ namespace Catering.Handlers
             UserRepository.Delete(user);
             return null;
         }
+
+        public static string UpdatePassword(int id, string newPassword)
+        {
+            User user = UserRepository.FindUserById(id);
+            if (user == null)
+                return "User doesn't exists";
+
+            user.UserPassword = newPassword;
+            UserRepository.Update(user);
+            return null;
+        }
+
+        public static bool AnyUserWithFollowingId(int id)
+        {
+            return UserRepository.AnyUserWithFollowingId(id);
+        }
     }
 }

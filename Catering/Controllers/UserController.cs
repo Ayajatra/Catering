@@ -17,6 +17,7 @@ namespace Catering.Controllers
         public static string DeleteById(int id)
         {
             return UserHandler.DeleteById(id);
+
         }
     }
 }

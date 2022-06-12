@@ -21,6 +21,12 @@ namespace Catering.Repositories
             return db.Users.Any(x => x.Username == username);
         }
 
+        public static bool AnyUserWithFollowingId(int id)
+        {
+            CateringEntities db = Database.Instance;
+            return db.Users.Any(x => x.UserId == id);
+        }
+
         public static void Insert(User user)
         {
             CateringEntities db = Database.Instance;
@@ -44,6 +50,13 @@ namespace Catering.Repositories
         {
             CateringEntities db = Database.Instance;
             db.Users.Remove(user);
+            db.SaveChanges();
+        }
+
+        public static void Update(User user)
+        {
+            CateringEntities db = Database.Instance;
+            db.Entry(user).State = EntityState.Modified;
             db.SaveChanges();
         }
     }

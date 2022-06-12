@@ -23,11 +23,6 @@ namespace Catering.Views
             Repeater1.DataBind();
         }
 
-        protected void ToggleActiveButton_Click(object sender, CommandEventArgs e)
-        {
-
-        }
-
         protected void DeleteButton_Click(object sender, CommandEventArgs e)
         {
             int foodId = Convert.ToInt32((string)e.CommandArgument);
